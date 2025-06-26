@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Select Preferred Cuisine"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/cbIndian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Indian" />
+
+        <CheckBox
+            android:id="@+id/cbChinese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chinese" />
+
+        <CheckBox
+            android:id="@+id/cbItalian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Italian" />
+
+        <CheckBox
+            android:id="@+id/cbStreetFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Street Food" />
+
+        <!-- Veg / Non-Veg Radio Group -->
+        <TextView
+            android:text="Select Food Type"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioVeg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Veg" />
+
+            <RadioButton
+                android:id="@+id/radioNonVeg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Non-Veg" />
+        </RadioGroup>
+
+        <!-- Budget -->
+        <EditText
+            android:id="@+id/editFoodBudget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Enter food budget (optional)" />
+
+        <!-- Next button -->
+        <Button
+            android:id="@+id/btnNextFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next" />
+
+    </LinearLayout>
+</ScrollView>

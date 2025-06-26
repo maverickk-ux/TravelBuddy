@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Place Categories:"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp" />
+
+        <CheckBox
+            android:id="@+id/cbAdventure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adventure" />
+
+        <CheckBox
+            android:id="@+id/cbNature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nature" />
+
+        <CheckBox
+            android:id="@+id/cbHistorical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historical" />
+
+        <CheckBox
+            android:id="@+id/cbShopping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shopping" />
+
+        <CheckBox
+            android:id="@+id/cbReligious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Religious" />
+
+        <CheckBox
+            android:id="@+id/cbMuseum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Museum" />
+
+        <CheckBox
+            android:id="@+id/cbAmusement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amusement Park" />
+
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:layout_marginTop="24dp" />
+    </LinearLayout>
+</ScrollView>
