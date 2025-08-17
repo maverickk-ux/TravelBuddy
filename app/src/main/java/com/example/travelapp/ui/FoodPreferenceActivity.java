@@ -8,21 +8,23 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.travelapp.R;
 
 import java.util.ArrayList;
 
 public class FoodPreferenceActivity extends AppCompatActivity {
 
-    CheckBox cbIndian, cbChinese, cbItalian, cbStreetFood;
-    EditText editFoodBudget;
-    Button btnNextFood;
+    private CheckBox cbIndian, cbChinese, cbItalian, cbStreetFood;
+    private EditText editFoodBudget;
+    private Button btnNextFood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_preference);
+        setContentView(R.layout.activity_food_preference); // ✅ must match file name
 
+        // Bind UI
         cbIndian = findViewById(R.id.cbIndian);
         cbChinese = findViewById(R.id.cbChinese);
         cbItalian = findViewById(R.id.cbItalian);
@@ -30,7 +32,6 @@ public class FoodPreferenceActivity extends AppCompatActivity {
         editFoodBudget = findViewById(R.id.editFoodBudget);
         btnNextFood = findViewById(R.id.btnNextFood);
 
-        // 🆕 Bind radio buttons here
         RadioButton radioVeg = findViewById(R.id.radioVeg);
         RadioButton radioNonVeg = findViewById(R.id.radioNonVeg);
 
@@ -41,30 +42,23 @@ public class FoodPreferenceActivity extends AppCompatActivity {
             if (cbItalian.isChecked()) cuisines.add("Italian");
             if (cbStreetFood.isChecked()) cuisines.add("Street Food");
 
-            // Use selected food type
-            String foodType = radioVeg.isChecked() ? "Veg" : "Non-Veg";
-            String foodBudget = editFoodBudget.getText().toString();
+            // Food type
+            String foodType = radioVeg.isChecked() ? "Veg" :
+                    (radioNonVeg.isChecked() ? "Non-Veg" : "Not Selected");
+
+            String foodBudget = editFoodBudget.getText().toString().trim();
 
             Intent intent = new Intent(FoodPreferenceActivity.this, ItineraryActivity.class);
 
-            // Bring all previous data forward
+            // Forward all previous extras
             intent.putExtras(getIntent());
 
-            // Pass food data
+            // Add food preferences
             intent.putStringArrayListExtra("cuisines", cuisines);
             intent.putExtra("foodType", foodType);
             intent.putExtra("foodBudget", foodBudget);
 
-            // Mock data: Pass selected attractions for each day (replace with actual logic later)
-            ArrayList<String> plan = new ArrayList<>();
-            plan.add("Day 1: Lalbagh at 10:00 AM");
-            plan.add("Day 2: Bangalore Palace at 11:00 AM");
-            plan.add("Day 3: Cubbon Park at 4:00 PM");
-
-            intent.putStringArrayListExtra("dailyPlan", plan);
-
             startActivity(intent);
         });
     }
-
 }

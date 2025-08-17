@@ -6,7 +6,6 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.travelapp.R;
-import com.example.travelapp.ui.TripDetailsActivity; // ✅ Make sure this import is added
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
@@ -49,11 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
-
-                        // ✅ Navigate to TripDetailsActivity
-                        Intent intent = new Intent(LoginActivity.this, TripDetailsActivity.class);
-                        startActivity(intent);
-                        finish(); // Optional: to prevent going back to login
+                        // TODO: Start MainActivity or Dashboard
                     } else {
                         Toast.makeText(this, "Login failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }

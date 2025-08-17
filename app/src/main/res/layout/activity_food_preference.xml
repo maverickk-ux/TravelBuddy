@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:text="Street Food" />
 
-        <!-- Veg / Non-Veg Radio Group -->
+        <!-- Veg / Non-Veg -->
         <TextView
             android:text="Select Food Type"
             android:textSize="18sp"
